@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: rgb(252, 252, 252);
+}
+
+.sidebar {
+  min-height: 100vh;
+  background-color: white;
+  border-right: 1px solid #ddd;
+  padding: 1rem;
+}
+.sidebar .nav-link {
+  color: #333;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+  background-color: #f0f0ff;
+  color: #5c27fe;
+}
+.content {
+  background-color: rgb(252, 252, 252);
+  padding: 2rem;
+}
+
+.content-header > p {
+  color: rgb(120, 120, 120);
+}
+
+.default-table {
+  border-radius: 05px;
+  width: 100%;
+}
+
+.default-table,
+.default-table tr,
+.default-table td,
+.default-table th {
+  border-collapse: collapse;
+  border: 01px solid rgb(230, 230, 230);
+  padding: 10px;
+}
