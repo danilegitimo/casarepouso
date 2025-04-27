@@ -27,7 +27,7 @@
           <header class="content-header mb-4" style="display: flex; justify-content: space-between; align-items: center;">
             <div style="width: 100%;">
               <h1>Medicações</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere autem, nisi quis eos repellendus neque unde quia mollitia voluptate nostrum placeat quaerat corrupti veniam labore aliquam. Nisi consequuntur saepe perspiciatis!</p>
+              <p>É importante que as medicações estejam atualizadas para estarem disponível para equipe médica</p>
             </div>
             <div>
               <a href="{{ route('medications.index') }}" class="btn btn-success">Voltar</a>

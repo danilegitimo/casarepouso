@@ -42,7 +42,7 @@
           <header class="content-header mb-4" style="display: flex; justify-content: space-between; align-items: center;">
             <div style="width: 100%;">
               <h1>Atividades</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere autem, nisi quis eos repellendus neque unde quia mollitia voluptate nostrum placeat quaerat corrupti veniam labore aliquam. Nisi consequuntur saepe perspiciatis!</p>
+              <p>As atividades são importantes para saúde física e mental. Além, de entretenimento.</p>
             </div>
             <div>
               <a href="{{ route('activities.create') }}" class="btn btn-success">Cadastrar</a>
@@ -77,7 +77,7 @@
               </tbody>
             </table>
             @else
-            <p>Poxa :/ Não atividades para mostrar, por favor, cadastre um para começar.</p>
+            <p>Não há nenhuma atividade. Cadastre uma.</p>
             @endif
           </div>
         </div>

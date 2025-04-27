@@ -25,7 +25,7 @@
             <header class="content-header mb-4" style="display: flex; justify-content: space-between; align-items: center;">
               <div style="width: 100%;">
                 <h1>Pacientes</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere autem, nisi quis eos repellendus neque unde quia mollitia voluptate nostrum placeat quaerat corrupti veniam labore aliquam. Nisi consequuntur saepe perspiciatis!</p>
+                <p>É importante que o cadastro dos pacientes estejam atualizados para serem consultados pela equipe médica</p>
               </div>
               <div>
                 <a href="{{ route('patients.index') }}" class="btn btn-success">Voltar</a>

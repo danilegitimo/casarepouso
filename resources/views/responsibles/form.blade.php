@@ -27,7 +27,7 @@
           <header class="content-header mb-4" style="display: flex; justify-content: space-between; align-items: center;">
             <div style="width: 100%;">
               <h1>Responsável</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere autem, nisi quis eos repellendus neque unde quia mollitia voluptate nostrum placeat quaerat corrupti veniam labore aliquam. Nisi consequuntur saepe perspiciatis!</p>
+              <p>É importante que o cadastro dos responsáveis estejam atualizados para que a equipe médica possa entrar em contato em casos de urgências</p>
             </div>
             <div>
               <a href="{{ route('responsibles.index') }}" class="btn btn-success">Voltar</a>
@@ -143,7 +143,7 @@
                 </div>
               </div>
 
-              @if ( $user->patients->isNotEmpty() )
+              @if ( isset($user->patients) ? $user->patients->isNotEmpty() : false )
                 <div class="row mb-4">
 
                 </div>

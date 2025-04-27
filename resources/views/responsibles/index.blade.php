@@ -42,7 +42,7 @@
           <header class="content-header mb-4" style="display: flex; justify-content: space-between; align-items: center;">
             <div style="width: 100%;">
               <h1>Responsáveis</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere autem, nisi quis eos repellendus neque unde quia mollitia voluptate nostrum placeat quaerat corrupti veniam labore aliquam. Nisi consequuntur saepe perspiciatis!</p>
+              <p>É importante que o cadastro dos responsáveis estejam atualizados para que a equipe médica possa entrar em contato em casos de urgências</p>
             </div>
             <div>
               <a href="{{ route('responsibles.create') }}" class="btn btn-success">Cadastrar</a>
@@ -81,7 +81,7 @@
               </tbody>
             </table>
             @else
-            <p>Poxa :/ Não usuários para mostrar, por favor, cadastre um para começar.</p>
+            <p>Não há responsáveis para mostrar. Cadastre um.</p>
             @endif
           </div>
         </div>
