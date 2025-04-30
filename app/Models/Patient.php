@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Patient extends Model {
+class Patient extends Model
+{
 
   use SoftDeletes;
-  
+
   /**
    * 
    * 
@@ -25,13 +26,28 @@ class Patient extends Model {
     'picture',
     'responsible_user_id'
   ];
-  
+
   protected $casts = [
     'birthdate' => 'datetime'
   ];
 
-  public function responsible() {
+  public function responsible()
+  {
     return $this->hasOne(User::class, 'id');
   }
 
+  public function medications()
+  {
+    return $this->belongsToMany(Medication::class)->withTimestamps();
+  }
+
+  public function activities()
+  {
+    return $this->belongsToMany(Activity::class)->withTimestamps();
+  }
+
+  public function diseases()
+  {
+    return $this->belongsToMany(Disease::class)->withTimestamps();
+  }
 }

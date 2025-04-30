@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
+use App\Models\Disease;
+use App\Models\Medication;
 use App\Models\Patient;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -14,8 +17,22 @@ class PatientController extends Controller {
   }
 
   public function create() {
+    $patient = null;
     $users = User::get();
-    return view('patients.form', ['patient' => null, 'users' => $users]);
+    $medications = Medication::all();
+    $activities  = Activity::all();
+    $diseases    = Disease::all();
+    $medications_selected = null;
+    $activities_selected  = null;
+    $diseases_selected    = null;
+
+    return view('patients.form', compact(
+      'patient', 'users', 'medications', 'activities', 'diseases',
+      'medications_selected',
+      'diseases_selected',
+      'activities_selected'
+    ));
+
   }
 
   public function store(Request $request) {
@@ -29,8 +46,20 @@ class PatientController extends Controller {
       "address"      => "nullable|min:5|max:255",
       "responsible_user_id" => "required"
     ]);
-    
+
     $patient = Patient::create($validated);
+
+    if ( $request->has('diseases') ) {
+      $patient->diseases()->sync($request->diseases);
+    }
+
+    if ( $request->has('medications') ) {
+      $patient->medications()->sync($request->medications);
+    }
+
+    if ( $request->has('activities') ) {
+      $patient->activities()->sync($request->activities);
+    }
 
     if ( $patient ) {
       return redirect()->route('patients.index')
@@ -44,7 +73,19 @@ class PatientController extends Controller {
 
   public function edit(Patient $patient) {
     $users = User::get();
-    return view('patients.form', compact('patient', 'users'));
+    $medications = Medication::get();
+    $activities  = Activity::get();
+    $diseases    = Disease::get();
+    $medications_selected = $patient->medications;
+    $activities_selected  = $patient->activities;
+    $diseases_selected    = $patient->diseases;
+
+    return view('patients.form', compact(
+      'patient', 'users', 'medications', 'activities', 'diseases',
+      'medications_selected',
+      'diseases_selected',
+      'activities_selected'
+    ));
   }
 
   public function update(Request $request, Patient $patient) {
@@ -60,6 +101,18 @@ class PatientController extends Controller {
     ]);
     
     $patient->update($validated);
+
+    if ( $request->has('diseases') ) {
+      $patient->diseases()->sync($request->diseases);
+    }
+
+    if ( $request->has('medications') ) {
+      $patient->medications()->sync($request->medications);
+    }
+
+    if ( $request->has('activities') ) {
+      $patient->activities()->sync($request->activities);
+    }
 
     if ( $patient ) {
       return redirect()->route('patients.index')

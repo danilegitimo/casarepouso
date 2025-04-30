@@ -18,11 +18,13 @@ body {
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
 }
+
 .sidebar .nav-link.active,
 .sidebar .nav-link:hover {
-  background-color: #f0f0ff;
-  color: #5c27fe;
+  background-color: #f83838;
+  color: white;
 }
+
 .content {
   background-color: rgb(252, 252, 252);
   padding: 2rem;

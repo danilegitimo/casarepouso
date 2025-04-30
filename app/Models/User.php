@@ -42,6 +42,15 @@ class User extends Authenticatable {
   ];
 
   /**
+   * 
+   * Append attributes 
+   *
+   */
+  protected $appends = [
+    'is_admin'
+  ];
+
+  /**
    * Get the attributes that should be cast.
    *
    * @return array<string, string>
@@ -56,6 +65,10 @@ class User extends Authenticatable {
 
   public function role() {
     return $this->belongsTo(Role::class);
+  }
+
+  public function getIsAdminAttribute() {
+    return ['true'];
   }
 
   public function patients() {

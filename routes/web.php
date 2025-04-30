@@ -4,7 +4,6 @@ use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\DiseaseController;
 use App\Http\Controllers\MedicationController;
 use App\Http\Controllers\PatientController;
-use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ResponsiblesController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -24,12 +23,4 @@ Route::middleware('auth')->group(function () {
   Route::resource('medications', MedicationController::class);
   Route::resource('activities', ActivityController::class);
   Route::resource('diseases', DiseaseController::class);
-
-  Route::controller(PermissionController::class)
-    ->prefix('permissions')
-    ->name('permissions.')
-    ->group(function () {
-      Route::get('/', 'index')->name('index');
-    });
-
 });

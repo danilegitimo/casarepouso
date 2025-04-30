@@ -57,7 +57,7 @@
                   <th>Nome</th>
                   <th>Dosagem</th>
                   <th>Quantidade</th>
-                  <th>Reconrrência</th>
+                  <th>Recorrência</th>
                   <th>Ações</th>
                 </tr>
               </thead>

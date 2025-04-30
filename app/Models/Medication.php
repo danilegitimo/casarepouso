@@ -4,7 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Medication extends Model {
+class Medication extends Model
+{
 
   protected $fillable = [
     'name',
@@ -14,4 +15,7 @@ class Medication extends Model {
     'period_hours'
   ];
 
+  public function patients() {
+    return $this->belongsToMany(Patient::class)->withTimestamps();
+  }
 }
