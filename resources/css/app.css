@@ -47,3 +47,14 @@ body {
   border: 01px solid rgb(230, 230, 230);
   padding: 10px;
 }
+
+.card {
+  border: 1px solid rgb(230, 230, 230) !important;
+  color: white !important;
+  min-height: 200px;
+}
+
+.card-master {
+  background-color: #f83838 !important;
+  min-height: 424px;
+}

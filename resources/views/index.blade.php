@@ -22,43 +22,57 @@
 
         <main class="col-md-10 ms-sm-auto content p-5">
           <div class="container-fluid">
+            <div class="row">
 
-            <header class="content-header" style="display: flex; justify-content: space-between; align-items: center;">
-              <div style="width: 100%;">
-                <h1>Título</h1>
-                <p>Descrição</p>
+              <div class="col-4">
+                <!-- Total de pacientes -->
+                <div class="card card-master justify-content-center ps-4" style="border: 0 !important;border-radius: 32px;">
+                  <p class="m-0" style="text-transform: uppercase;">Pacientes</p>
+                  <p style="font-weight: bold !important;line-height: 1;font-size: 5rem;">{{ $patients->count() }}</p>
+                </div>
               </div>
-              <div>
-                <a href="#" class="btn btn-success">Ação</a>
-              </div>
-            </header>
 
-            @if ( isset($variable) && $variable->isNotEmpty() )
-              <div class="mt-2 table-container">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <td></td>
-                      <td>Ações</td>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    @foreach ($variable as $variable)
-                    <tr>
-                      <td></td>
-                      <td>
-                        <a href="#" class="btn btn-danger">Editar</a>
-                      </td>
-                    </tr>
-                    @endforeach
-                  </tbody>
-                </table>
+              <div class="col-8">
+
+                <div class="row">
+                  <div class="col-4">
+                    <div class="card justify-content-center ps-4" style="border: 0 !important;border-radius: 32px;background-color: rgb(25, 111, 225);">
+                      <p class="m-0" style="text-transform: uppercase;">Medicações</p>
+                      <p style="font-weight: bold !important;line-height: 1;font-size: 5rem;">{{ $medications->count() }}</p>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="card justify-content-center ps-4" style="border: 0 !important;border-radius: 32px;background-color: #1cc3cc">
+                      <p class="m-0" style="text-transform: uppercase;">Doenças</p>
+                      <p style="font-weight: bold !important;line-height: 1;font-size: 5rem;">{{ $diseases->count() }}</p>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="card justify-content-center ps-4" style="border: 0 !important;border-radius: 32px;background-color: #541ccc">
+                      <p class="m-0" style="text-transform: uppercase;">Atividades</p>
+                      <p style="font-weight: bold !important;line-height: 1;font-size: 5rem;">{{ $activities->count()  }}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mt-4">
+                  <div class="col-4">
+                    <div class="card justify-content-center ps-4" style="border: 0 !important;border-radius: 32px;background-color: #ce2fe0">
+                      <p class="m-0" style="text-transform: uppercase;">Refeições</p>
+                      <p style="font-weight: bold !important;line-height: 1;font-size: 5rem;">{{ $patients->count() * 8 }}</p>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="card justify-content-center ps-4" style="border: 0 !important;border-radius: 32px;background-color: #e09f2f">
+                      <p class="m-0" style="text-transform: uppercase;">Visitas</p>
+                      <p style="font-weight: bold !important;line-height: 1;font-size: 5rem;">{{ $patients->count() * 12 }}</p>
+                    </div>
+                  </div>
+                </div>
+
               </div>
-            @else
-              <div>
-                <p>Empty.</p>
-              </div>
-            @endif
+
+            </div>
           </div>
         </main>
 

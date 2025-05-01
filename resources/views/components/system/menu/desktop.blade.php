@@ -3,9 +3,12 @@
     <h5 class="fw-bold">São Expedito</h5>
   </div>
   <ul class="nav flex-column">
+
+    @if ( Auth::user()->is_admin || Route::has('dashboard') )
     <li class="nav-item">
-      <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">Dashboard</a>
+      <a  class="nav-link {{ request()->is('dashboard/*') || request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">Painel</a>
     </li>
+    @endif
 
     @if ( Auth::user()->is_admin || Route::has('responsibles.index') )
     <li class="nav-item">

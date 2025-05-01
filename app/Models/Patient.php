@@ -33,7 +33,7 @@ class Patient extends Model
 
   public function responsible()
   {
-    return $this->hasOne(User::class, 'id');
+    return $this->hasOne(User::class, 'id', 'responsible_user_id');
   }
 
   public function medications()
